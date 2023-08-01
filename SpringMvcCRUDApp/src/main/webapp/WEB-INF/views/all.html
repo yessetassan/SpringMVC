@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Player</title>
+  <style>
+    body {
+      margin: 20px;
+    }
+
+    p.topic {
+      text-align: center;
+      font-size: 30px;
+      margin: 20px;
+      padding: 2px;
+      color: green;
+      background-color: aquamarine;
+    }
+
+    a.cr {
+        margin:5px;
+        padding: 1px;
+        border: 1px black solid;
+        color: green;
+        background-color: aliceblue;
+    }
+  </style>
+</head>
+<body>
+<p class="topic">Football Stars !</p>
+<div th:each="x : ${list}">
+  <a th:href="@{/all/{id} (id = ${x.getNumber()})}" th:text="${x.getName()}"></a>
+</div>
+
+
+<br/>
+<hr/>
+<br/>
+
+<a class="cr" th:href="@{/all/create}">Create a new Person </a>
+</body>
+</html>

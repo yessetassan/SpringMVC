@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+    <title>Player Page !</title>
+</head>
+<body>
+
+Full Name is :
+<p th:text="${player.getName()}"></p>
+Player Number :
+<p th:text="${player.getNumber()}"></p>
+
+<hr/>
+<br/>
+
+<a th:href="@{/all/{id}/edit (id = ${player.getNumber()})}">Edit !</a>
+<br/>
+
+<form method="DELETE" th:action="@{/all/{id} (id = ${player.getNumber()})}">
+  <input type="submit" value="Delete !">
+</form>
+<br/>
+<a th:href="@{/all}">Back !</a>
+</body>
+</html>

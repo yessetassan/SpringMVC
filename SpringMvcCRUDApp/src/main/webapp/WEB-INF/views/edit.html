@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Page !</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/all/{id} (id = ${player.getNumber()})}" th:object="${player}">
+    <label for="name">Edit Name</label>
+    <input type="text" name="name" id="name">
+    <br/>
+    <input type="submit" value="Edit !">
+</form>
+
+
+</body>
+</html>
